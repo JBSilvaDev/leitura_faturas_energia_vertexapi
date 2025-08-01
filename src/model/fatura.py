@@ -3,7 +3,7 @@ class Faturas:
     
     pass
 
-  def data_dict(self):
+  def modelo_resposta(self):
     """
     Retorna um dicionário com as chaves e valores esperados para a resposta da API.
     """

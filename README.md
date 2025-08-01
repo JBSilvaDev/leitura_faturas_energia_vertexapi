@@ -15,6 +15,8 @@ api-gemini/
 │   │   ├── __init__.py
 │   │   ├── fatura.py            # Classe(s) para representar fatura e lógica de extração
 │   │   └── pdf_extractor.py     # Função/classe para extrair texto do PDF
+          
+
 │   │
 │   ├── view/
 │   │   ├── __init__.py
@@ -31,3 +33,19 @@ api-gemini/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+
+src/
+├── model/
+│   ├── __init__.py
+│   ├── fatura.py              # Estruturas de dados (dataclasses)
+│   ├── pdf_extractor.py       # Funções para extrair texto do PDF
+│   └── vertex_client.py       # Classe/funções para interação com a API Vertex/Gemini
+│
+├── view/
+│   └── main.py                # Interface com o usuário
+│
+├── controller/
+│   └── fatura_controller.py   # Orquestra o fluxo entre view e model
+│
+└── utils/
+    └── file_manager.py        # Funções auxiliares
