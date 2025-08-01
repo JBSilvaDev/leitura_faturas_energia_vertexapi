@@ -1,26 +1,17 @@
 import vertexai
-from google.cloud import aiplatform
 from vertexai.generative_models import GenerativeModel, GenerationConfig
-import PyPDF2
-from pathlib import Path
-import os
-import pandas as pd
-import json
-import shutil
-
 from src.model.fatura import Faturas
 from src.model.pdf_leitor import ExtratorPDF
-from src.utils.gerencia_arquivos import MoverArquivos
+from src.utils.gerencia_arquivos import Utils
 
 FORMATO_RESPOSTA = Faturas().modelo_resposta()
 SCHEMA_RESPOSTA = Faturas().schema_resposta()
-CAMINHO_RAIZ = os.getenv("CAMINHO")
-PROJETO_GCP = os.getenv("PROJETO_GCP")
+utils = Utils()
 
 class ModelVertex:
   def __init__(self):
     # Inicializa o Vertex AI
-    vertexai.init(project=PROJETO_GCP, location="us-central1")
+    vertexai.init(project=utils.projeto_gcp, location="us-central1")
     self.model: GenerativeModel
     self.config: GenerationConfig
     self.pdf_text = None

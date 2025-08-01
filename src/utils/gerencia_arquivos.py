@@ -1,22 +1,26 @@
 import os
 import shutil
-from dotenv import load_dotenv
 from pathlib import Path
+from dotenv import load_dotenv
 
 load_dotenv()
 
-CAMINHO_RAIZ = os.getenv("CAMINHO")
+class Utils:
+    def __init__(self):
+      self.caminho_raiz = os.getenv("CAMINHO")
+      self.projeto_gcp = os.getenv("PROJETO_GCP")
+      self.pasta_data = fr"{self.caminho_raiz}\data"
+      self.pasta_nao_lidos = fr"{self.pasta_data}\pdfs_nao_lidos"
+      self.pasta_lidos = fr"{self.pasta_data}\pdfs_lidos"
+      self.pasta_excel = fr"{self.pasta_data}\export_excel"
 
 
 class MoverArquivos:
     def __init__(self):
-        self.caminho_origem = ""
-        self.caminho_destino = ""
-        self.arquivo = ""
+      self.utils = Utils() 
+      self.arquivo = ""
 
-    def mover_pdf(self, origem, destino, arquivo):
-      self.caminho_origem = Path(fr"{CAMINHO_RAIZ}\data\{origem}")
-      self.caminho_destino = Path(fr"{CAMINHO_RAIZ}\data\{destino}")
-      self.arquivo = Path(fr"{origem}\{arquivo}")
-      shutil.move(self.arquivo, destino)
+    def mover_pdf(self, arquivo):
+      self.arquivo = Path(fr"{self.utils.pasta_nao_lidos}\{arquivo}")
+      shutil.move(self.arquivo, self.utils.pasta_lidos)
 
