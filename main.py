@@ -1,17 +1,15 @@
 
 from src.model.converte_excel import ExportExcel
-from src.utils.gerencia_arquivos import Utils
-from src.view.ler_faturas import LerFaturas
+from src.view.ler_faturas import ServicosPDFs
 
-utils = Utils()
+
+
 
 
 def main():
-    ler_faturas = LerFaturas()
-    faturas = ler_faturas.ler_faturas()
-    print(faturas)
-    exportar_excel = ExportExcel(faturas)
-    exportar_excel.exportar_excel()
+    servicos = ServicosPDFs()
+    faturas = servicos.ler_faturas()
+    servicos.exportar_excel(faturas)
 
 
 if __name__ == "__main__":
