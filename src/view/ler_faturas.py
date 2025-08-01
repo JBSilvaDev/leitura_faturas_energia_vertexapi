@@ -8,13 +8,13 @@ pastas_pdfs = MoverArquivos()
 
 
 class LerFaturas:
-  def __init__(self):
+  def __init__(self, pasta_nao_lidos, pasta_lidos):
     self.lista_faturas = []
+    self.pasta_nao_lidos = pasta_nao_lidos
+    self.pasta_lidos = pasta_lidos
 
   def ler_faturas(self, caminho):
 
-    self.pasta_nao_lidos = fr"{caminho}\pdfs_nao_lidos"
-    self.pasta_lidos = fr"{caminho}\pdfs_lidos"
     arquivos = os.listdir(self.pasta_nao_lidos)  
 
     for i in arquivos:
@@ -25,3 +25,5 @@ class LerFaturas:
       pastas_pdfs.mover_pdf(self.pasta_nao_lidos, self.pasta_lidos, i)
       self.lista_faturas.append(resposta)
     return self.lista_faturas
+  
+  

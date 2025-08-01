@@ -29,7 +29,7 @@ class ModelVertex:
   def criar_modelo(self):
     # Carrega o modelo Gemini
     self.model = GenerativeModel("gemini-1.5-flash-002", system_instruction=f"""
-                        Você é um analista responsável por catalogar arquivos, extraindo de forma detalhada todo o seu conteúdo. Formate a resposta com um único JSON, acessível via json.loads python.
+                        Você é um analista responsável por catalogar arquivos, extraindo de forma detalhada todo o seu conteúdo. Formate a resposta com um único JSON, acessível via json.loads python. Normalmente COD BARRAS são inicados em '341' ou 836
                         {FORMATO_RESPOSTA}
                         Se alguma informação não for encontrada, preencha com 'não encontrado'. Para o campo IDENTIFICADOR, caso haja mais de um disponível, traga todos separados por ';'""")
     self.config = GenerationConfig(
