@@ -1,10 +1,5 @@
-
 from src.model.converte_excel import ExportExcel
 from src.view.ler_faturas import ServicosPDFs
-
-
-
-
 
 def main():
     servicos = ServicosPDFs()

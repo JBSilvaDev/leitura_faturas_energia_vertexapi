@@ -4,7 +4,6 @@ import os
 import json
 from src.model.vertex_client import ModelVertex
 from src.utils.gerencia_arquivos import MoverArquivos, Utils
-import os
 
 modelo = ModelVertex()
 controle_pdf = MoverArquivos()

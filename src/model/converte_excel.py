@@ -1,5 +1,4 @@
 import pandas as pd
-
 from src.utils.gerencia_arquivos import Utils
 
 utils = Utils()
