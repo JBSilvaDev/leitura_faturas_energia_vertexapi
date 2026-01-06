@@ -29,6 +29,10 @@ src/
     ler_faturas.py      # Interface de serviços para o main
 
 main.py                 # Ponto de entrada do sistema
+.env                    # Variáveis de ambiente (não incluído no repositório)
+  CAMINHO = Caminho absoluto do projeto
+  PROJETO_GCP = Projeto GCP onde o Vertex AI está configurado
+  GEMINI_VERSAO = gemini-1.5-flash-002
 ```
 
 ## 🚀 Como Usar
