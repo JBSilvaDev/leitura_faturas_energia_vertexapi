@@ -72,10 +72,5 @@ main.py                 # Ponto de entrada do sistema
 - **Controller:** Orquestra o fluxo de processamento.
 - **Utils:** Funções auxiliares para manipulação de arquivos e configuração.
 
-
-## 📚 Licença
-
-Este projeto é de uso interno e educacional. Consulte o responsável pelo projeto para informações sobre uso e distribuição.
-
 ---
 Desenvolvido por JB Silva
